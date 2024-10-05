@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
      <head>
-
         <title>Ocean Basin</title>
-
     </head>
 
     <body>
@@ -24,7 +22,7 @@
             animate();
             function addLabel(labelText,x,y,z,rotateByY) {
                 var loader = new THREE.FontLoader();
-                var url = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/fonts/helvetiker_bold.typeface.json';
+                var url = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/fonts/helvetiker_bold.typeface.json';
                 loader.load(url, function (font) {
                     var textGeo = new THREE.TextGeometry(labelText, {
                         font: font,
@@ -263,7 +261,7 @@
                 console.log(position.count); //2601
 
                 // load a texture
-                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/oceanbasinred.jpg' ;
+                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/oceanbasinred.jpg' ;
                 var loader = new THREE.TextureLoader();
                 var plane = new THREE.Mesh(_planeGeo,
                     new THREE.MeshBasicMaterial({
@@ -287,12 +285,12 @@
                 var geometry = new THREE.BoxGeometry(75, 75, 75);
                 var textureLoader = new THREE.TextureLoader();
              
-                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Title3.jpg';
-                var url2 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Title1.jpg';
-                var url3 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Top.jpg';
-                var url4 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Bottom.jpg';
-                var url5 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Title2.jpg';
-                var url6 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Title4.jpg';
+                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Title3.jpg';
+                var url2 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Title1.jpg';
+                var url3 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Top.jpg';
+                var url4 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Bottom.jpg';
+                var url5 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Title2.jpg';
+                var url6 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Title4.jpg';
                 var materials = [
                     new THREE.MeshBasicMaterial({ map: textureLoader.load(url1) }),
                     new THREE.MeshBasicMaterial({ map: textureLoader.load(url2) }),
@@ -346,7 +344,7 @@
                 var legendPosition = legendplaneGeo.attributes.position;
               
                 var vector = new THREE.Vector3();
-                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Legend.jpg';
+                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Legend.jpg';
                 var loader = new THREE.TextureLoader();
                 var legendplane = new THREE.Mesh(legendplaneGeo,
                     new THREE.MeshBasicMaterial({
@@ -436,7 +434,7 @@
                 var legendPosition = backLegendplaneGeo.attributes.position;
 
                 var vector = new THREE.Vector3();
-                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/OceanBasin/image/Legendback.jpg';
+                var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/Legendback.jpg';
                 var loader = new THREE.TextureLoader();
                 var backLegendplane = new THREE.Mesh(backLegendplaneGeo,
                     new THREE.MeshBasicMaterial({
