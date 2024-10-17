@@ -68,7 +68,7 @@
                 drawWave();
                   drawFrontLegend();
                   drawBackLegend();
-                addPointLight();
+
                 _renderer = new THREE.WebGLRenderer();
                 _renderer.setSize(window.innerWidth - 25, window.innerHeight - 25);
                 document.body.appendChild(_renderer.domElement);
@@ -83,21 +83,7 @@
                 _scene.add(_camera);
             }
 
-            function addPointLight() {
-                //var light = new THREE.PointLight(0xffffff, 100, 100);
-                //light.position.set(-100, -100, 200);
-                //_scene.add(light);
-                var dirLight = new THREE.DirectionalLight( 0xffffff, 0.125 );
-                dirLight.position.set(0, 0, 1).normalize();
-                _scene.add(dirLight);
-
-                var pointLight = new THREE.PointLight(0xffffff, 1.5);
-                pointLight.position.set(0, 100, 90);
-                _scene.add(pointLight);
-            }
-
             function drawPlane() {
-         
                 var depth = 50;
                 var planeDefinition = depth,
                     planeSize = 1000;
@@ -258,7 +244,7 @@
 
                     vector.fromBufferAttribute(position, i);
                 }
-                console.log(position.count); //2601
+                console.log(position.count); 
 
                 // load a texture
                 var url1 = 'https://raw.githubusercontent.com/aidenchen404/OceanBasin/main/image/oceanbasinred.jpg' ;
@@ -277,7 +263,7 @@
             function getRandomIntInclusive(min, max) {
                 min = Math.ceil(min);
                 max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+                return Math.floor(Math.random() * (max - min + 1) + min); 
             }
 
             function drawTitle() {
@@ -314,7 +300,7 @@
                 _waveplaneGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize / 2 + 10, depth, depth);
                 var position = _waveplaneGeo.attributes.position;
                 var vector = new THREE.Vector3();
-                console.log(position.count ); //2601
+                
                 for (let i = 0, l = position.count; i < l; i++) {
                     var newZ = Math.sin(i) * (20) + WAVEHEIGHT;
                     position.setZ(i, newZ);
@@ -349,7 +335,6 @@
                 var legendplane = new THREE.Mesh(legendplaneGeo,
                     new THREE.MeshBasicMaterial({
                         map: loader.load(url1),
-                        //color: "#ff55ff",
                         wireframe: false,
                         opacity: 0.9,
                         transparent: true
@@ -415,7 +400,7 @@
                 }
               
 
-                // corer nodes
+                // corner nodes
                 legendPosition.setY(0, 250);
                 legendPosition.setY(204, -100);
 
@@ -489,7 +474,7 @@
                 }
                
 
-                // corer nodes
+                // corner nodes
                 legendPosition.setY(0, 270);
                 legendPosition.setY(204, -100);
                 legendPosition.setY(50, 230);
@@ -564,7 +549,7 @@
                     if (doAnimating ){
                         _titlebox.rotation.y -= 0.005;// spin titlebox
                          AnimatingWave();        // wave     
-                         AnimatingCamera();        // camera alway move alone Z
+                         AnimatingCamera();       
                 }
                 _renderer.render(_scene, _camera);
             }
